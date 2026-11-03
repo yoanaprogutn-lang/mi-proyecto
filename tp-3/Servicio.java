@@ -22,3 +22,36 @@ public class Servicio {
         this.asientosDisponibles = cantAsientos; // ¡Aquí inicializamos el contador con el total!
         this.listaEspera = new ListaDeEspera<>();
     }
+
+}
+
+public String getID() {
+    return ID;
+}
+public String getEmpresa() {
+    return empresa;
+}
+public String getDestino() {
+    return destino;
+}
+public Date getHorario() {
+    return horario;
+}
+public int getCantAsientos() {
+    return cantAsientos;
+}
+public double getPrecio() {
+    return precio;
+}
+public int lugaresDisponibles() {
+    return asientosDisponibles;
+}
+public void venderPasaje(String pasajero) {
+    if (asientosDisponibles > 0) {
+        asientosDisponibles--;
+        System.out.println("¡Pasaje vendido con éxito!");
+    } else {
+        listaEspera.agregar(pasajero);
+        System.out.println("Colectivo lleno. Pasajero agregado a la lista de espera.");
+    }
+}
